@@ -14,8 +14,7 @@ public class Test {
         graph.AddEdge(2, 1, 1);
         graph.AddEdge(1, 4, 1);
 
-        List<Vertex> visitedVertices = new List<Vertex>();
-        visitedVertices.Add(graph.GetVertex(0));
-        graph.DepthFirstSearch(0, visitedVertices);
+       
+        graph.BreadthFirstSearch(0);
     }
 }

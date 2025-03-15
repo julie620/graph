@@ -1,7 +1,10 @@
-﻿public class Graph {
+﻿using System.Collections;
+
+public class Graph {
     
     private int [,] matrix;
     private Vertex[] vertices;
+    private List<Vertex> visitedVertices;
     private int edgeNum;
 
     public Graph(int size) {
@@ -28,6 +31,7 @@
 
     public void AddVertex(int index, Vertex vertex) {
         vertices[index] = vertex;
+        vertex.SetIndex(index);
     }
 
     public void AddEdge(int start, int end, int weight) {
@@ -55,26 +59,33 @@
         return matrix[start, end] != 0;
     }
 
-    public int[] GetNeighbors(int start) {
+    public int[] GetNeighbors(int verticesIndex) {
         int count = 0;
         int[] temp;
 
         for (int i = 0; i < vertices.Length; i++) {
-            if (matrix[start, i] != 0) {
+            if (matrix[verticesIndex, i] != 0) {
                 count++;
             }
         }
         temp = new int[count];
         count = 0;
         for (int i = 0; i < vertices.Length; i++) {
-            if (matrix[start, i] != 0) {
+            if (matrix[verticesIndex, i] != 0) {
                 temp[count++] = i;;
             }
         }
         return temp;
     }
 
-    public void DepthFirstSearch(int start, List<Vertex> visitedVertices) {
+    public List<Vertex> GetVisitedList(int start) {
+        visitedVertices = new List<Vertex>();
+        visitedVertices.Add(vertices[start]);
+        return visitedVertices;
+    }
+
+    public void DepthFirstSearch(int start) {
+        List<Vertex> visitedVertices = GetVisitedList(start);
         Console.WriteLine(vertices[start].GetData());
 
         foreach (int index in GetNeighbors(start)) {
@@ -82,9 +93,27 @@
             
             if (!visitedVertices.Contains(neighbor)) {
                 visitedVertices.Add(neighbor);
-                DepthFirstSearch(index, visitedVertices);
+                DepthFirstSearch(index);
             }
         }
+    }
+
+    public void BreadthFirstSearch(int start) {
+        List<Vertex> visitedVertices = GetVisitedList(start);
+        Queue<Vertex> vertexQueue = new Queue<Vertex>();
+        vertexQueue.Enqueue(vertices[start]);
+        while (vertexQueue.Count != 0) {
+            Vertex current = vertexQueue.Dequeue();
+            Console.WriteLine(current.GetData());
+
+            foreach (int index in GetNeighbors(current.GetIndex())) {
+                Vertex neighbor = vertices[index];
+                if (!visitedVertices.Contains(neighbor)) {
+                    visitedVertices.Add(neighbor);
+                    vertexQueue.Enqueue(neighbor);
+                }
+            }
+        }   
     }
 
     public void PrintMatrix() {
