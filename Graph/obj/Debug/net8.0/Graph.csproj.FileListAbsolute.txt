@@ -1,0 +1,14 @@
+C:\Users\julia\OneDrive\Desktop\Coding_Projects\CS240\L7\Graph\bin\Debug\net8.0\Graph.exe
+C:\Users\julia\OneDrive\Desktop\Coding_Projects\CS240\L7\Graph\bin\Debug\net8.0\Graph.deps.json
+C:\Users\julia\OneDrive\Desktop\Coding_Projects\CS240\L7\Graph\bin\Debug\net8.0\Graph.runtimeconfig.json
+C:\Users\julia\OneDrive\Desktop\Coding_Projects\CS240\L7\Graph\bin\Debug\net8.0\Graph.dll
+C:\Users\julia\OneDrive\Desktop\Coding_Projects\CS240\L7\Graph\bin\Debug\net8.0\Graph.pdb
+C:\Users\julia\OneDrive\Desktop\Coding_Projects\CS240\L7\Graph\obj\Debug\net8.0\Graph.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\julia\OneDrive\Desktop\Coding_Projects\CS240\L7\Graph\obj\Debug\net8.0\Graph.AssemblyInfoInputs.cache
+C:\Users\julia\OneDrive\Desktop\Coding_Projects\CS240\L7\Graph\obj\Debug\net8.0\Graph.AssemblyInfo.cs
+C:\Users\julia\OneDrive\Desktop\Coding_Projects\CS240\L7\Graph\obj\Debug\net8.0\Graph.csproj.CoreCompileInputs.cache
+C:\Users\julia\OneDrive\Desktop\Coding_Projects\CS240\L7\Graph\obj\Debug\net8.0\Graph.dll
+C:\Users\julia\OneDrive\Desktop\Coding_Projects\CS240\L7\Graph\obj\Debug\net8.0\refint\Graph.dll
+C:\Users\julia\OneDrive\Desktop\Coding_Projects\CS240\L7\Graph\obj\Debug\net8.0\Graph.pdb
+C:\Users\julia\OneDrive\Desktop\Coding_Projects\CS240\L7\Graph\obj\Debug\net8.0\Graph.genruntimeconfig.cache
+C:\Users\julia\OneDrive\Desktop\Coding_Projects\CS240\L7\Graph\obj\Debug\net8.0\ref\Graph.dll
