@@ -12,3 +12,4 @@ C:\Users\julia\OneDrive\Desktop\Coding_Projects\CS240\L7\Graph\obj\Debug\net8.0\
 C:\Users\julia\OneDrive\Desktop\Coding_Projects\CS240\L7\Graph\obj\Debug\net8.0\Graph.pdb
 C:\Users\julia\OneDrive\Desktop\Coding_Projects\CS240\L7\Graph\obj\Debug\net8.0\Graph.genruntimeconfig.cache
 C:\Users\julia\OneDrive\Desktop\Coding_Projects\CS240\L7\Graph\obj\Debug\net8.0\ref\Graph.dll
+C:\Users\julia\OneDrive\Desktop\Coding_Projects\CS240\L7\Graph\obj\Debug\net8.0\Graph.sourcelink.json

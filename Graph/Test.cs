@@ -8,11 +8,14 @@ public class Test {
         graph.AddVertex(3, new Vertex("D"));
         graph.AddVertex(4, new Vertex("E"));
 
-        graph.AddEdge(0, 1, 1);
-        graph.AddEdge(1, 2, 1);
+        graph.AddEdge(0, 2, 1);
+        graph.AddEdge(0, 3, 1);
         graph.AddEdge(2, 3, 1);
-        graph.AddEdge(2, 4, 1);
-        graph.AddEdge(4, 0, 1);
-        graph.AddEdge(4, 2, 1);
+        graph.AddEdge(2, 1, 1);
+        graph.AddEdge(1, 4, 1);
+
+        List<Vertex> visitedVertices = new List<Vertex>();
+        visitedVertices.Add(graph.GetVertex(0));
+        graph.DepthFirstSearch(0, visitedVertices);
     }
 }
