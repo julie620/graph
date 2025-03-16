@@ -1,10 +1,17 @@
-﻿using System.Collections;
+﻿/*
+ * Author: Juliana Serrano
+ * Last Modified: 03/15/2025
+ * Graph
+ * The Graph class contains methods to create and traverse graph
+*/
+
+using System.Diagnostics;
 
 public class Graph {
     
-    private int [,] matrix;
-    private Vertex[] vertices;
-    private List<Vertex> visitedVertices;
+    private int [,] matrix; // adjaceny matrix
+    private Vertex[] vertices; //array of added vertices
+    private List<Vertex> visitedVertices; // for traversals
     private int edgeNum;
 
     public Graph(int size) {
@@ -13,7 +20,7 @@ public class Graph {
         edgeNum = 0;
     }
 
-    public int NodeCount() {
+    public int VertexCount() {
         return vertices.Length;
     }
 
@@ -35,10 +42,10 @@ public class Graph {
     }
 
     public void AddEdge(int start, int end, int weight) {
-        if (weight == 0) {
+        if (weight == 0) { // will not edge with with weight of 0
             return;
         }
-        if (matrix[start, end] == 0) {
+        if (matrix[start, end] == 0) { //counts new edge if edge does not exist
             edgeNum++;
         }
         matrix[start, end] = weight;
@@ -62,7 +69,7 @@ public class Graph {
     public int[] GetNeighbors(int verticesIndex) {
         int count = 0;
         int[] temp;
-
+        //gets number of neighbors 
         for (int i = 0; i < vertices.Length; i++) {
             if (matrix[verticesIndex, i] != 0) {
                 count++;
@@ -70,6 +77,7 @@ public class Graph {
         }
         temp = new int[count];
         count = 0;
+        //adds index numbers of neighoboring vertices into temp array
         for (int i = 0; i < vertices.Length; i++) {
             if (matrix[verticesIndex, i] != 0) {
                 temp[count++] = i;;
@@ -78,14 +86,20 @@ public class Graph {
         return temp;
     }
 
+    // sets up List to track visited vertices during traversals
     public List<Vertex> GetVisitedList(int start) {
         visitedVertices = new List<Vertex>();
         visitedVertices.Add(vertices[start]);
         return visitedVertices;
     }
 
+    /*
+    From the start vertex it will traverse to the "smaller" neighbor first and continue in a similar matter
+    adding to the vistied list until there are no more connecting vertices. It will then trace back adding 
+    all the other neighboring vertices of the vertices that have been visited already.
+    */
     public void DepthFirstSearch(int start) {
-        List<Vertex> visitedVertices = GetVisitedList(start);
+        visitedVertices = GetVisitedList(start);
         Console.WriteLine(vertices[start].GetData());
 
         foreach (int index in GetNeighbors(start)) {
@@ -98,8 +112,12 @@ public class Graph {
         }
     }
 
+    /*
+    From the start vertex it wll traverse to each neighboring vertex adding and removing vertices from a queue 
+    as their neighbors are visited.
+    */
     public void BreadthFirstSearch(int start) {
-        List<Vertex> visitedVertices = GetVisitedList(start);
+        visitedVertices = GetVisitedList(start);
         Queue<Vertex> vertexQueue = new Queue<Vertex>();
         vertexQueue.Enqueue(vertices[start]);
         while (vertexQueue.Count != 0) {
@@ -116,6 +134,7 @@ public class Graph {
         }   
     }
 
+    //prints out adjacency matrix
     public void PrintMatrix() {
         Console.Write("  ");
         foreach (Vertex vertex in vertices) {
