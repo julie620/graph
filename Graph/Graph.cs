@@ -93,11 +93,7 @@ public class Graph {
         return visitedVertices;
     }
 
-    /*
-    From the start vertex it will traverse to the "smaller" neighbor first and continue in a similar matter
-    adding to the vistied list until there are no more connecting vertices. It will then trace back adding 
-    all the other neighboring vertices of the vertices that have been visited already.
-    */
+    //traverses all adjacent vertices and reachable vertices
     public void DepthFirstSearch(int start) {
         visitedVertices = GetVisitedList(start);
         Console.WriteLine(vertices[start].GetData());
@@ -112,10 +108,7 @@ public class Graph {
         }
     }
 
-    /*
-    From the start vertex it wll traverse to each neighboring vertex adding and removing vertices from a queue 
-    as their neighbors are visited.
-    */
+    // traverses all adjacent vertices than the adjacent vertices of those vertices
     public void BreadthFirstSearch(int start) {
         visitedVertices = GetVisitedList(start);
         Queue<Vertex> vertexQueue = new Queue<Vertex>();
